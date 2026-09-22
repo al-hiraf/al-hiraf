@@ -1,0 +1,25 @@
+{
+  "name": "accounting-crm",
+  "version": "2.0.0",
+  "description": "Simple scalable accounting system with CRM - الحرف المتكاملة",
+  "main": "backend/server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node backend/server.js",
+    "init-db": "node backend/db/init.js",
+    "start": "npm run init-db && node backend/server.js",
+    "deploy:backend": "wrangler publish",
+    "deploy:frontend": "cd frontend && wrangler pages publish . --project-name al-hiraf",
+    "deploy": "npm run deploy:backend && npm run deploy:frontend"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "sqlite3": "^5.1.6",
+    "cors": "^2.8.5",
+    "body-parser": "^1.20.2",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@cloudflare/wrangler": "^3.0.0"
+  }
+}

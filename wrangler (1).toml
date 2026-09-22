@@ -1,0 +1,23 @@
+name = "al-hiraf-api"
+main = "backend/worker.js"
+type = "javascript"
+compatibility_date = "2024-01-15"
+account_id = "6c5bc6be6d26c3d335c49909b524c93e"
+
+# D1 Database binding (SQLite in Cloudflare)
+[[d1_databases]]
+binding = "DB"
+database_name = "al-hiraf-db"
+
+# Environment variables
+[env.production.vars]
+ENVIRONMENT = "production"
+CORS_ORIGIN = "https://al-hiraf.pages.dev"
+TAX_RATE = "0.15"
+
+# Build configuration
+[build]
+command = "npm install"
+cwd = "."
+main = "backend/worker.js"
+watch_paths = ["backend/**/*.js"]

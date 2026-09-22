@@ -1,0 +1,15 @@
+name = "al-hiraf"
+type = "javascript"
+compatibility_date = "2024-01-15"
+account_id = "6c5bc6be6d26c3d335c49909b524c93e"
+
+# Build configuration for Cloudflare Pages
+[build]
+command = "echo 'Frontend static files - no build needed'"
+cwd = "."
+watch_paths = ["*.html", "*.js", "*.css"]
+
+# Environment variables
+[env.production.vars]
+API_URL = "https://al-hiraf-api.6c5bc6be6d26c3d335c49909b524c93e.workers.dev"
+ENVIRONMENT = "production"
